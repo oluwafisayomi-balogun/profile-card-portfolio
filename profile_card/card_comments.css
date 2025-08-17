@@ -1,0 +1,99 @@
+/* === Page layout === */
+body {
+  display: flex;                 /* Centers .box horizontally */
+  justify-content: center;       /* Aligns .box in the middle (x-axis) */
+  align-items: center;           /* Aligns .box in the middle (y-axis) */
+  height: 100vh;                 /* Full viewport height → allows vertical centering */
+}
+
+/* === Card container === */
+.box {
+  width: 399px;                  /* Fixed width of the card */
+  height: 339px;                 /* Fixed height of the card */
+  display: flex;                 /* Enables flexbox inside */
+  flex-direction: column;        /* Stack children (content + icons) vertically */
+  border-radius: 20px;           /* Rounded corners */
+  background: linear-gradient(
+    36.93deg, 
+    rgba(237, 231, 246, 0) 18.65%, 
+    rgba(209, 196, 233, 0.2) 61.17%
+  );                             /* Soft gradient background */
+  box-shadow: 0 0 5px 0 rgba(38, 11, 88, 0.53); /* Subtle shadow */
+  border: 1.3px solid rgba(179, 157, 219, 0.53); /* Soft purple border */
+}
+
+/* === Content section (image + text) === */
+.content {
+  display: flex;                 /* Put image + text side by side */
+  align-items: center;           /* Vertically align image and text */
+  justify-content: space-around; /* Space between image and text */
+  flex-grow: 1;                  /* Expand to take up remaining vertical space */
+  margin-bottom: 0;              /* Remove bottom margin */
+}
+
+/* === Text styling === */
+.intro {
+  font-size: 20px;               /* Larger text for intro */
+  font-family: 'Inter';          /* Font family */
+  width: 150px;                  /* Restrict text width */
+  height: 30px;                  /* Fixed height */
+  font-weight: 400;              /* Regular weight */
+  line-height: 30px;             /* Matches height → vertically centered */
+  color: #2E2E2E;                /* Dark gray text */
+  padding: 0 10px;               /* Horizontal padding */
+  margin-bottom: 0;              /* Tight spacing below */
+}
+
+.persona {
+  font-size: 15px;               /* Slightly smaller than intro */
+  font-family: 'Inter';
+  width: 150px;
+  height: 20px;
+  font-weight: 300;              /* Light weight */
+  line-height: 20px;             /* Matches height */
+  color: #2E2E2E;
+  padding: 0 10px;
+  margin-top: 0;                 /* Remove top margin */
+}
+
+.text {
+  font-size: 14px;               /* Small body text */
+  font-family: "Inter";
+  width: 150px;
+  font-weight: 300;
+  line-height: 19px;             /* Comfortable reading line spacing */
+  color: #2E2E2E;
+  padding: 10px;                 /* Breathing room around text */
+  display: flex;                 /* Flex to allow wrapping */
+  flex-flow: row wrap;           /* Wrap text into multiple lines if needed */
+}
+
+/* === Image styling === */
+img {
+  width: 172px;                  /* Fixed width */
+  height: 172px;                 /* Fixed height */
+  border-radius: 50%;            /* Makes it circular */
+  object-fit: cover;             /* Crops instead of stretching */
+  object-position: center 20%;   /* Focus slightly above center (better for faces) */
+  background: #D1C4E9;           /* Placeholder background color */
+}
+
+/* === Icon row at the bottom === */
+.icon {
+  display: flex;                 /* Horizontal row of icons */
+  justify-content: center;       /* Center them horizontally */
+  align-items: flex-end;         /* Align at bottom of box */
+  gap: 10px;                     /* Space between icons */
+  margin-top: 0;
+  padding-bottom: 20px;          /* Push away from bottom edge */
+}
+
+/* === Individual icon button === */
+.icon-btn {
+  width: 20px;                   /* Size of icon container */
+  height: 20px;
+  display: flex;                 /* Center icon inside */
+  align-items: center;
+  justify-content: center;
+  color: rgba(38, 11, 88, 0.53); /* Muted purple-gray icon color */
+}
